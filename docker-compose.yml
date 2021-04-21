@@ -1,0 +1,24 @@
+# when finish: exit from container and docker-compose down
+version: '3'
+services:
+  #  encrypter:
+  #    image: php:7.1
+  #    entrypoint: |
+  #      bash -c "
+  #      php -v && \
+  #      tail -f /dev/null
+  #      "
+  #    environment:
+  #      ENV_PARAM: some
+  #    volumes:
+  #      - .:/src/
+  encrypter:
+    image: adoptopenjdk:11
+    entrypoint: |
+      bash -c "
+      apt-get update && apt -y install node &&
+      apt -y install php php-cli php-fpm php-json php-common php-mysql php-zip php-gd php-mbstring php-curl php-xml php-pear php-bcmath &&
+      \ tail -f /dev/null
+      "
+    volumes:
+      - .:/src/

@@ -1,0 +1,4 @@
+output.enc
+/node_modules
+.env
+.idea/
